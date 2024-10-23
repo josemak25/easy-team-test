@@ -1,0 +1,25 @@
+version: "3"
+services:
+  app:
+    container_name: easyteam_server
+    restart: always
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "80:3000"
+    volumes:
+      - .:/usr/src/app
+    links:
+      - mongodb
+
+  mongodb:
+    container_name: easyteam_database
+    image: mongo:latest
+    ports:
+      - 27018:27017
+    volumes:
+      - data:/data/db
+
+volumes:
+  data:
