@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "sourceMap": true,
+    "outDir": "build",
+    "target": "es2021",
+    "incremental": true,
+    "module": "CommonJS",
+    "skipLibCheck": true,
+    "inlineSources": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "resolveJsonModule": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "Node",
+    "skipDefaultLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": { "@app/*": ["./src/*"] },
+
+    // Set `sourceRoot` to  "/" to strip the build path prefix
+    // from generated source code references.
+    // This improves issue grouping in Sentry.
+    "sourceRoot": "/"
+  },
+  "include": ["src", "typings", "__test__"],
+  "exclude": ["node_modules", "**/*.spec.ts"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}
